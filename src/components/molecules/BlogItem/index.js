@@ -1,8 +1,11 @@
 import React from "react";
 import { RegisterBg } from "../../../assets";
 import "./blogItem.scss";
+import { Button, Gap } from "../../atoms";
+import { useHistory } from "react-router-dom";
 
 const BlogItem = () => {
+  const history = useHistory();
   return (
     <div className="blog-item">
       <img className="image-thumb" src={RegisterBg} alt="post" />
@@ -15,6 +18,11 @@ const BlogItem = () => {
           dignissimos autem a libero quae doloremque, vitae nam nemo repudiandae
           accusamus?
         </p>
+        <Gap height={20} />
+        <Button
+          title="View Detail"
+          onClick={() => history.push("/detail-blog")}
+        />
       </div>
     </div>
   );
